@@ -1,0 +1,27 @@
+{
+  "name": "pacifica-js-uploader",
+  "version": "0.0.1",
+  "description": "Pacifica JavaScript Uploader Library",
+  "scripts": {
+    "pretest": "jshint lib/ test/",
+    "test": "istanbul cover --statements=100 --functions=100 --branches=100 --lines=100 node_modules/nodeunit/bin/nodeunit test/",
+    "docs": "node node_modules/yuidocjs/lib/cli.js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:22/dmlb2000/pacifica-js-uploader"
+  },
+  "keywords": [
+    "Pacifica"
+  ],
+  "author": "David Brown",
+  "license": "LGPL-2.1",
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "jshint": "^2.9.5",
+    "nodeunit": "^0.11.1",
+    "requirejs": "^2.3.5",
+    "yuidocjs": "^0.10.2"
+  }
+}

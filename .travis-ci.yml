@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "0.10.2"
+script:
+  - npm run pretest
+  - npm run test
+  - npm run docs
+before_script:
+  - npm install
