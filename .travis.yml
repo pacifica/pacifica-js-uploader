@@ -4,6 +4,7 @@ node_js:
 script:
   - npm run pretest
   - npm run test
+  - npm run checktest
   - npm run docs
 before_script:
   - npm install
