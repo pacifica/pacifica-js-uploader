@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Pacifica JavaScript Uploader Library",
   "scripts": {
-    "pretest": "jshint lib/ test/",
+    "pretest": "jshint lib/ test/ && jslint --edition=latest lib/*.js test/*.js",
     "test": "istanbul cover node_modules/nodeunit/bin/nodeunit test/",
     "checktest": "istanbul check-coverage --statements=100 --functions=100 --branches=100 --lines=100",
     "docs": "node node_modules/yuidocjs/lib/cli.js ."
