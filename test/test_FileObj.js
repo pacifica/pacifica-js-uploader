@@ -18,7 +18,7 @@ exports.testFileObj = function (test) {
     test_obj = new FileObj('{"name": "blarg"}');
     test.equal(test_obj.name, 'blarg', 'passing json to fileobj sets the properties.');
     var new_obj = {};
-    new_obj['name'] = 'blarg';
+    new_obj.name = 'blarg';
     test_obj = new FileObj(new_obj);
     test.equal(test_obj.name, 'blarg', 'passing json to fileobj sets the properties.');
     test.done();
