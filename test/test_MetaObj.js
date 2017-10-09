@@ -21,6 +21,10 @@ exports.testMetaObj = function (test) {
     });
     test_obj = new MetaObj('{"metaID": "blarg"}');
     test.equal(test_obj.metaID, 'blarg', 'passing json to metaobj sets the properties.');
+    var new_obj = {};
+    new_obj['metaID'] = 'blarg';
+    test_obj = new MetaObj(new_obj);
+    test.equal(test_obj.metaID, 'blarg', 'passing json to metaobj sets the properties.');
     test.done();
 };
 
