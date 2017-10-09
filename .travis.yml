@@ -2,7 +2,9 @@ language: node_js
 node_js:
   - "6.11.4"
 script:
-  - npm run pretest
+  - npm run eslint
+  - npm run jshint
+  - npm run jslint
   - npm run test
   - npm run checktest
   - npm run docs
