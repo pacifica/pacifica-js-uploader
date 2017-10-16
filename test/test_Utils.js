@@ -1,7 +1,6 @@
 exports.testUtilsServerURL = function (test) {
     'use strict';
-    var Utils = require('../lib/Utils');
-    var test_obj = {};
+    var Utils = require('../lib/Utils'), test_obj = {};
     test_obj.addr = '127.0.0.1';
     process.env.METADATA_PATH = '/md_path';
     Utils.ServerURL(

@@ -1,13 +1,11 @@
 exports.testPolicyQuery = function (test) {
     'use strict';
     test.expect(3);
-    var PolicyQuery = require('../lib/PolicyQuery');
-    var pq_data = {
-        columns: ['_id'],
-        from: 'instruments',
-        where: {_id: 54}
-    };
-    var test_obj = new PolicyQuery('dmlb2001', {pq_data: pq_data});
+    var PolicyQuery = require('../lib/PolicyQuery'), pq_data = {
+            columns: ['_id'],
+            from: 'instruments',
+            where: {_id: 54}
+        }, test_obj = new PolicyQuery('dmlb2001', {pq_data: pq_data});
     test_obj.setUser(function () {
         test.equal(test_obj.pq_data.user, 10, 'Make sure user is now set to number not name.');
         test.equal(test_obj.pq_data.from, 'instruments', 'Make sure the original query was not changed.');
@@ -22,8 +20,7 @@ exports.testPolicyQuery = function (test) {
 exports.testPolicyQueryBad = function (test) {
     'use strict';
     test.expect(2);
-    var PolicyQuery = require('../lib/PolicyQuery');
-    var test_obj = new PolicyQuery();
+    var PolicyQuery = require('../lib/PolicyQuery'), test_obj = new PolicyQuery();
     test.equal(test_obj, undefined, 'This is an invalid object.');
     test_obj = new PolicyQuery('dmlb2001', {});
     test.equal(test_obj, undefined, 'No policy query data can not query on nothing.');

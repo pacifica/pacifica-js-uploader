@@ -1,7 +1,6 @@
 exports.testPolicyQueryData = function (test) {
     'use strict';
-    var PolicyQueryData = require('../lib/PolicyQueryData');
-    var test_obj = new PolicyQueryData();
+    var PolicyQueryData = require('../lib/PolicyQueryData'), test_obj = new PolicyQueryData(), new_obj = {};
     [
         'user',
         'columns',
@@ -12,7 +11,6 @@ exports.testPolicyQueryData = function (test) {
     });
     test_obj = new PolicyQueryData('{"user": "blarg"}');
     test.equal(test_obj.user, 'blarg', 'passing json to PolicyQueryData sets the properties.');
-    var new_obj = {};
     new_obj.user = 'blarg';
     test_obj = new PolicyQueryData(new_obj);
     test.equal(test_obj.user, 'blarg', 'passing json to PolicyQueryData sets the properties.');

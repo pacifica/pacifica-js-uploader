@@ -5,7 +5,7 @@
   "scripts": {
     "eslint": "eslint lib/ test/",
     "jshint": "jshint lib/ test/",
-    "jslint": "jslint --edition=latest lib/*.js test/*.js",
+    "jslint": "jslint --nomen --unparam lib/*.js test/*.js",
     "test": "istanbul cover node_modules/nodeunit/bin/nodeunit test/",
     "checktest": "istanbul check-coverage --statements=100 --functions=100 --branches=100 --lines=100",
     "docs": "node node_modules/yuidocjs/lib/cli.js ."
