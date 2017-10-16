@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Pacifica JavaScript Uploader Library",
   "scripts": {
-    "eslint": "eslint --fix lib/ test/",
+    "eslint": "eslint lib/ test/",
     "jshint": "jshint lib/ test/",
     "jslint": "jslint --nomen --unparam lib/*.js test/*.js",
     "test": "istanbul cover node_modules/nodeunit/bin/nodeunit test/",
