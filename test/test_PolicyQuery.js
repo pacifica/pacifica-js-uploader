@@ -6,7 +6,7 @@ exports.testPolicyQuery = function (test) {
         columns: ['_id'],
         from: 'instruments',
         where: { _id: 54 }
-    }
+    };
     var test_obj = new PolicyQuery('dmlb2001', { pq_data: pq_data });
     test_obj.setUser(function() {
         test.equal(test_obj.pq_data.user, 10, 'Make sure user is now set to number not name.');

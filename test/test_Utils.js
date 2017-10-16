@@ -2,7 +2,7 @@ exports.testUtilsServerURL = function (test) {
     'use strict';
     var Utils = require('../lib/Utils');
     var test_obj = {};
-    test_obj._addr = '127.0.0.1';
+    test_obj.addr = '127.0.0.1';
     process.env['METADATA_PATH'] = '/md_path';
     Utils.ServerURL(
         test_obj,
@@ -13,11 +13,11 @@ exports.testUtilsServerURL = function (test) {
         'METADATA'
     );
     [
-        '_addr',
-        '_port',
-        '_path',
-        '_proto',
-        '_url'
+        'addr',
+        'port',
+        'path',
+        'proto',
+        'url'
     ].forEach(function (attr_name) {
         test.ok(test_obj.hasOwnProperty(attr_name), 'Test obj should have ' + attr_name + ' property.');
     });
@@ -30,7 +30,7 @@ exports.testUtilsServerURL = function (test) {
         ],
         'METADATA'
     );
-    test.equal(test_obj._url, 'https://1.2.3.4:8121/blarg');
+    test.equal(test_obj.url, 'https://1.2.3.4:8121/blarg');
     test.done();
 };
 
