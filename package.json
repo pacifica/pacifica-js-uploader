@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Pacifica JavaScript Uploader Library",
   "scripts": {
-    "pretest": "jshint lib/ test/",
+    "eslint": "eslint lib/ test/",
+    "jshint": "jshint lib/ test/",
+    "jslint": "jslint --white --nomen --unparam lib/*.js test/*.js",
     "test": "istanbul cover node_modules/nodeunit/bin/nodeunit test/",
     "checktest": "istanbul check-coverage --statements=100 --functions=100 --branches=100 --lines=100",
     "docs": "node node_modules/yuidocjs/lib/cli.js ."
@@ -20,10 +22,15 @@
   "devDependencies": {
     "codeclimate-test-reporter": "^0.5.0",
     "coveralls": "^3.0.0",
+    "eslint": "^4.8.0",
     "istanbul": "^0.4.5",
     "jshint": "^2.9.5",
+    "jslint": "^0.11.0",
     "nodeunit": "^0.11.1",
     "requirejs": "^2.3.5",
     "yuidocjs": "^0.10.2"
+  },
+  "dependencies": {
+    "node-rest-client": "^3.1.0"
   }
 }
