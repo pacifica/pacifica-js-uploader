@@ -1,11 +1,11 @@
 exports.testPolicyQuery = function (test) {
     'use strict';
     test.expect(3);
-    var PolicyQuery = require('../lib/PolicyQuery'), pq_data = {
+    var pq_data = {
             columns: ['_id'],
             from: 'instruments',
             where: {_id: 54}
-        }, test_obj = new PolicyQuery('dmlb2001', {pq_data: pq_data});
+        }, PolicyQuery = require('../lib/PolicyQuery'), test_obj = new PolicyQuery('dmlb2001', {pq_data: pq_data});
     test_obj.setUser(function () {
         test.equal(test_obj.pq_data.user, 10, 'Make sure user is now set to number not name.');
         test.equal(test_obj.pq_data.from, 'instruments', 'Make sure the original query was not changed.');
