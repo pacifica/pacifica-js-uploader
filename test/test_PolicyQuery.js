@@ -20,9 +20,10 @@ exports.testPolicyQuery = function (test) {
 exports.testPolicyQueryBad = function (test) {
     'use strict';
     test.expect(2);
-    var PolicyQuery = require('../lib/PolicyQuery'), test_obj = new PolicyQuery();
-    test.equal(test_obj, undefined, 'This is an invalid object.');
+    var PolicyQuery = require('../lib/PolicyQuery'), test_obj;
+    test_obj = new PolicyQuery();
+    test.ok(test_obj, 'This is an invalid object.');
     test_obj = new PolicyQuery('dmlb2001', {});
-    test.equal(test_obj, undefined, 'No policy query data can not query on nothing.');
+    test.ok(test_obj, 'No policy query data can not query on nothing.');
     test.done();
 };
