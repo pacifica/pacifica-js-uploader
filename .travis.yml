@@ -11,4 +11,5 @@ script:
 after_script:
   - node node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info
 before_script:
+  - bash -xe travis/before-install.sh
   - npm install
