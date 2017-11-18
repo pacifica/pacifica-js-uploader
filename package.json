@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:22/dmlb2000/pacifica-js-uploader"
+    "url": "ssh://git@github.com:22/pacifica/pacifica-js-uploader"
   },
   "keywords": [
     "Pacifica"
@@ -31,6 +31,7 @@
     "yuidocjs": "^0.10.2"
   },
   "dependencies": {
-    "node-rest-client": "^3.1.0"
+    "node-rest-client": "^3.1.0",
+    "tar-stream": "^1.5.5"
   }
 }
