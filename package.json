@@ -37,6 +37,7 @@
     "path": "^0.12.7",
     "promise": "^8.0.1",
     "stream-multiplexer": "^1.0.2",
-    "tar-stream": "^1.5.5"
+    "tar-stream": "^1.5.5",
+    "tempfile": "^2.0.0"
   }
 }
