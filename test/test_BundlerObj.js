@@ -7,7 +7,6 @@ exports.testBundlerObj = function (test) {
     test.expect(1);
     fs.stat('README.md', function (err, stats) {
         var mytar = fs.createWriteStream('mytar.tar'),
-            readStream = fs.createReadStream('README.md'),
             test_obj = new BundlerObj(md_obj, [
                 {
                     'tarEntryArgs': {
@@ -15,7 +14,15 @@ exports.testBundlerObj = function (test) {
                         'size': stats.size,
                         'mtime': stats.mtimeMs/1000
                     },
-                    'readStream': readStream
+                    'readStream': fs.createReadStream('README.md')
+                },
+                {
+                    'tarEntryArgs': {
+                        'name': 'blarg/package.json',
+                        'size': stats.size,
+                        'mtime': stats.mtimeMs/1000
+                    },
+                    'readStream': fs.createReadStream('package.json')
                 }
             ],
             'sha1');
