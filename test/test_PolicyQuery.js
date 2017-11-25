@@ -6,10 +6,10 @@ exports.testPolicyQuery = function (test) {
             from: 'instruments',
             where: {_id: 54}
         }, PolicyQuery = require('../lib/PolicyQuery'), test_obj = new PolicyQuery('dmlb2001', {pq_data: pq_data});
-    test_obj.setUser(function () {
+    test_obj.setUser().then(function () {
         test.equal(test_obj.pq_data.user, 10, 'Make sure user is now set to number not name.');
         test.equal(test_obj.pq_data.from, 'instruments', 'Make sure the original query was not changed.');
-        test_obj.get_results(function (test_obj, results) {
+        test_obj.get_results().then(function (results) {
             test.equal(results[0]._id, 54, 'instrument ID should be 54');
         });
     });
