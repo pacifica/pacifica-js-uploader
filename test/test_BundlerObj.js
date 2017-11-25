@@ -32,7 +32,7 @@ exports.testBundlerObj = function (test) {
     Promise.all(file_promises).then( function (file_data) {
         var mytar = fs.createWriteStream(temptar),
             test_obj = new BundlerObj(md_obj, file_data, 'sha1');
-        test_obj.stream(mytar, function () {
+        test_obj.stream(mytar).then(function () {
             mytar.on('finish', function () {
                 var extract = tar.extract(),
                     names = ['data/README.md', 'blarg/package.json', 'metadata.txt'];
