@@ -4,6 +4,8 @@ exports.testMetaData = function (test) {
     test.ok(test_obj.hasOwnProperty('byMetaID'), 'MetaObj should have indexMetaID property.');
     test_obj = new MetaData('[{"metaID": "blarg"}]');
     test.equal(test_obj[0].metaID, 'blarg', 'passing json to metaobj sets the properties.');
+    test_obj = new MetaData([{"metaID": "foo"}]);
+    test.equal(test_obj[0].metaID, 'foo', 'passing json to metaobj sets the properties.');
     test.done();
 };
 
