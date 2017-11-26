@@ -2,11 +2,11 @@ exports.testMetaUpdate = function (test) {
     'use strict';
     var MetaUpdate = require('../lib/MetaUpdate'),
         test_obj = new MetaUpdate();
-    test.ok(test_obj, "MetaUpdate returned something.");
+    test.ok(test_obj, 'MetaUpdate returned something.');
     test_obj = new MetaUpdate('username', '[]');
-    test.ok(test_obj, "MetaUpdate returned something.");
+    test.ok(test_obj, 'MetaUpdate returned something.');
     test_obj = new MetaUpdate('username', []);
-    test.ok(test_obj, "MetaUpdate returned something.");
+    test.ok(test_obj, 'MetaUpdate returned something.');
     test.done();
 };
 exports.testMetaUpdateAsync = function (test) {
@@ -39,19 +39,19 @@ exports.testMetaUpdateDirectory = function (test) {
         MetaObj = require('../lib/MetaObj'),
         meta_obj = new MetaUpdate('dmlb2001');
     meta_obj.push(new MetaObj({
-        "directoryOrder": 0,
-        "displayFormat": "Proposal ID <%= _id %>",
-        "metaID": "directory-proposal",
-        "query_results": [{
-            "_id": "1234a"
+        'directoryOrder': 0,
+        'displayFormat': 'Proposal ID <%= _id %>',
+        'metaID': 'directory-proposal',
+        'query_results': [{
+            '_id': '1234a'
         }]
     }));
     meta_obj.push(new MetaObj({
-        "directoryOrder": 1,
-        "displayFormat": "Instrument ID <%= _id %>",
-        "metaID": "directory-instrument",
-        "query_results": [{
-            "_id": "54"
+        'directoryOrder': 1,
+        'displayFormat': 'Instrument ID <%= _id %>',
+        'metaID': 'directory-instrument',
+        'query_results': [{
+            '_id': '54'
         }]
     }));
     test.equal(meta_obj.directory_prefix(), 'Proposal ID 1234a/Instrument ID 54', 'directory prefix is rendered.');
