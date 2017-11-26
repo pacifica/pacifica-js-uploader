@@ -15,7 +15,9 @@ exports.testMetaUpdateAsync = function (test) {
     var MetaUpdate = require('../lib/MetaUpdate'),
         fs = require('fs');
     fs.readFile('./test_data/uploader.json', 'utf8', function (err, data) {
-        if (err) throw err;
+        if (err) {
+            throw err;
+        }
         var test_obj = new MetaUpdate('dmlb2001', data);
         test_obj.update_parents('instrument').then(function () {
             var meta_obj = test_obj.byMetaID('instrument');
@@ -23,10 +25,12 @@ exports.testMetaUpdateAsync = function (test) {
             test.equal(meta_obj.value, 54, 'id of the instrument we want is 54.');
             test.equal(meta_obj.query_results[0].name_short, 'Nittany Liquid Prob\u00e9s', 'name of the instrument is known.');
             test_obj.update_parents('proposal').then(function () {
-                var meta_obj = test_obj.byMetaID('proposal');
+                meta_obj = test_obj.byMetaID('proposal');
                 test.equal(meta_obj.value, '1234a', 'id of the proposal we want is 1234a.');
             });
-        }, function (err) { throw err; });
+        }, function (err) { 
+            if(err) { throw err; }
+        });
     });
     setTimeout(function () {
         test.done();
