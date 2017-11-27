@@ -33,8 +33,9 @@
   "dependencies": {
     "crypto": "^1.0.1",
     "ejs": "^2.5.7",
+    "http": "0.0.0",
+    "https": "^1.0.0",
     "mime": "^2.0.3",
-    "node-rest-client": "^3.1.0",
     "path": "^0.12.7",
     "promise": "^8.0.1",
     "stream-multiplexer": "^1.0.2",
