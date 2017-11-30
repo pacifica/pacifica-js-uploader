@@ -9,7 +9,6 @@ addons:
     sources:
       - elasticsearch-5.x
     packages:
-      - python2.7
       - elasticsearch
       - oracle-java8-set-default
 cache:
