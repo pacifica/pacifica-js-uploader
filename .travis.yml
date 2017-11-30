@@ -10,7 +10,6 @@ addons:
       - elasticsearch-5.x
     packages:
       - python2.7
-      - python2.7-virtualenv
       - elasticsearch
       - oracle-java8-set-default
 cache:
