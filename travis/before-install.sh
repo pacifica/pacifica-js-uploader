@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 if [ -z "$RUN_LINTS" ]; then
-  virtualenv travis/venv
-  . travis/venv/bin/activate
+  source ~/virtualenv/python2.7/bin/activate
+  python --version
   pip install --upgrade pip setuptools
   pip install -r requirements-dev.txt
   psql -c 'create database pacifica_metadata;' -U postgres
