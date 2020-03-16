@@ -30,7 +30,7 @@ exports.testPolicyQueryMetaData = function (test) {
         'value': 10
     }));
     md_obj.push(new MetaObj({
-        'destinationTable': 'Transactions.proposal',
+        'destinationTable': 'Transactions.project',
         'value': '1234a'
     }));
     md_obj.push(new MetaObj({
