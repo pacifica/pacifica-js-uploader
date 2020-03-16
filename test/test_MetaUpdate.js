@@ -24,9 +24,9 @@ exports.testMetaUpdateAsync = function (test) {
             test.equal(meta_obj.query_results.length, 2, 'length of the result is 2.');
             test.equal(meta_obj.value, 54, 'id of the instrument we want is 54.');
             test.equal(meta_obj.query_results[0].name_short, 'Nittany Liquid Prob\u00e9s', 'name of the instrument is known.');
-            test_obj.update_parents('proposal').then(function () {
-                meta_obj = test_obj.byMetaID('proposal');
-                test.equal(meta_obj.value, '1234a', 'id of the proposal we want is 1234a.');
+            test_obj.update_parents('project').then(function () {
+                meta_obj = test_obj.byMetaID('project');
+                test.equal(meta_obj.value, '1234a', 'id of the project we want is 1234a.');
             });
         }, function (err) { 
             if(err) { throw err; }
@@ -44,8 +44,8 @@ exports.testMetaUpdateDirectory = function (test) {
         meta_obj = new MetaUpdate('dmlb2001');
     meta_obj.push(new MetaObj({
         'directoryOrder': 0,
-        'displayFormat': 'Proposal ID <%= _id %>',
-        'metaID': 'directory-proposal',
+        'displayFormat': 'Project ID <%= _id %>',
+        'metaID': 'directory-project',
         'query_results': [{
             '_id': '1234a'
         }]
@@ -58,6 +58,6 @@ exports.testMetaUpdateDirectory = function (test) {
             '_id': '54'
         }]
     }));
-    test.equal(meta_obj.directory_prefix(), 'Proposal ID 1234a/Instrument ID 54', 'directory prefix is rendered.');
+    test.equal(meta_obj.directory_prefix(), 'Project ID 1234a/Instrument ID 54', 'directory prefix is rendered.');
     test.done();
 };

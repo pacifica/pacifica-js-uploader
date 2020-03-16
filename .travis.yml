@@ -1,21 +1,12 @@
 language: node_js
 services:
-  - postgresql
-  - mysql
-  - elasticsearch
-  - rabbitmq
-addons:
-  apt:
-    sources:
-      - elasticsearch-5.x
-    packages:
-      - elasticsearch
-      - oracle-java8-set-default
 cache:
   directories:
     - node_modules # NPM packages
 node_js:
   - "8.9.1"
+env:
+  TRAVIS_PYTHON_VERSION: 3.6
 script:
   - npm run eslint
   - npm run jshint
@@ -26,5 +17,9 @@ script:
 after_script:
   - node node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info
 before_script:
-  - bash -xe travis/before-install.sh
+  - source /home/travis/virtualenv/python${TRAVIS_PYTHON_VERSION}/bin/activate
+  - pip install ansible
+  - ansible-galaxy install pacifica.ansible_pacifica pacifica.ansible_travis
+  - ansible-playbook ~/.ansible/roles/pacifica.ansible_travis/molecule/common/playbook.yml -i ~/.ansible/roles/pacifica.ansible_travis/molecule/common/inventory.yml -e "ansible_python_interpreter=/home/travis/virtualenv/python${TRAVIS_PYTHON_VERSION}/bin/python travis_virtualenv=python${TRAVIS_PYTHON_VERSION} github_repository=cli"
+install_script:
   - npm install
